@@ -31,6 +31,7 @@ class RegisterController: UIViewController {
             sc.profiles.append(User(name: name, surname: surname, email: email, password: password))
 //            sc.readFromJsonFile()
             sc.writeToJSonFile()
+            dismiss(animated: true)
         } else {
             print("something wrong")
         }

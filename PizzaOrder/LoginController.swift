@@ -25,6 +25,11 @@ class LoginController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        sc.readFromJsonFile()
+    }
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         passwordField.resignFirstResponder()
@@ -37,12 +42,16 @@ class LoginController: UIViewController, UITextFieldDelegate {
            let sceneDelegate = scene.delegate as? SceneDelegate  {
             
             if let email = emailField.text, let password = passwordField.text {
-                if email == (sc.profiles.map({ $0.email }))[0] && password == (sc.profiles.map({ $0.password }))[0] {
+                
+                for data in sc.profiles {
+                    if email == data.email && password == data.password {
                         UserDefaults.standard.set(true, forKey: "loggedIn")
+                        UserDefaults.standard.set(email, forKey: "loggedEmail")
                         sceneDelegate.setSecondRootController(windowScene: scene)
-                    } else {
-                    showPasswordErrorAlert()
+                    }
                 }
+            } else {
+                showPasswordErrorAlert()
             }
             
             

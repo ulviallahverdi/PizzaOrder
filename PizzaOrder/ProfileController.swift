@@ -19,8 +19,13 @@ class ProfileController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         sc.readFromJsonFile()
+        sc.readUserDataFromJsonFile(email: UserDefaults.standard.string(forKey: "loggedEmail") ?? "")
+        print(sc.profile)
+        
+        emailField.text = sc.profile[0].email
+        nameField.text = sc.profile[0].name
+        surnameField.text = sc.profile[0].surname
         
         // Do any additional setup after loading the view.
     }

@@ -164,7 +164,7 @@
         <!--Pizza-->
         <scene sceneID="vhO-Ru-9lf">
             <objects>
-                <viewController id="Lh6-rg-3l1" customClass="Pizza" sceneMemberID="viewController">
+                <viewController id="Lh6-rg-3l1" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mOp-2d-I0e">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

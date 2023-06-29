@@ -24,12 +24,24 @@ class StructureMain: UIViewController {
     }
     
     var profiles = [User]()
-
+    var profile = [User]()
 
     func readFromJsonFile() {
         do {
             let data = try Data(contentsOf: getFilePath())
             profiles = try JSONDecoder().decode([User].self, from: data)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func readUserDataFromJsonFile(email: String) {
+        do {
+            let data = try Data(contentsOf: getFilePath())
+            let user = try JSONDecoder().decode([User].self, from: data)
+            if let index = user.firstIndex(where: { $0.email == email }) {
+                profile.append(profiles[index])
+            }
         } catch {
             print(error.localizedDescription)
         }
