@@ -196,31 +196,70 @@
         <!--Profile Controller-->
         <scene sceneID="A38-tD-Aye">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PW9-9v-B7o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ProfileController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n6x-Ep-2e5" customClass="ProfileController" customModule="PizzaOrder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zdi-sa-CIv">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inh-pz-vJT">
-                                <rect key="frame" x="10" y="724.66666666666663" width="373" height="34.333333333333371"/>
+                                <rect key="frame" x="10" y="584.66666666666663" width="373" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Logout"/>
                                 <connections>
                                     <action selector="loginAction:" destination="n6x-Ep-2e5" eventType="touchUpInside" id="7xB-Jw-MLt"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cha-gD-G8F">
+                                <rect key="frame" x="10" y="148" width="373" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgA-E5-2w2">
+                                        <rect key="frame" x="0.0" y="0.0" width="373" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="surname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPe-wm-Drb">
+                                        <rect key="frame" x="0.0" y="50" width="373" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dX5-N7-O8H">
+                                        <rect key="frame" x="0.0" y="100" width="373" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="history orders" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0W-Sk-UUw">
+                                        <rect key="frame" x="0.0" y="150" width="373" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Kru-j1-WFd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Kru-j1-WFd" firstAttribute="bottom" secondItem="inh-pz-vJT" secondAttribute="bottom" constant="10" id="TA4-kg-qIN"/>
-                            <constraint firstItem="Kru-j1-WFd" firstAttribute="trailing" secondItem="inh-pz-vJT" secondAttribute="trailing" constant="10" id="ZIT-FC-I3O"/>
-                            <constraint firstItem="inh-pz-vJT" firstAttribute="leading" secondItem="Kru-j1-WFd" secondAttribute="leading" constant="10" id="sKw-6t-Fyd"/>
+                            <constraint firstItem="inh-pz-vJT" firstAttribute="leading" secondItem="Kru-j1-WFd" secondAttribute="leading" constant="10" id="3ge-6Y-djv"/>
+                            <constraint firstItem="Kru-j1-WFd" firstAttribute="bottom" secondItem="inh-pz-vJT" secondAttribute="bottom" constant="150" id="4vN-RK-chw"/>
+                            <constraint firstItem="cha-gD-G8F" firstAttribute="leading" secondItem="inh-pz-vJT" secondAttribute="leading" id="L1l-OT-vY2"/>
+                            <constraint firstItem="Kru-j1-WFd" firstAttribute="trailing" secondItem="inh-pz-vJT" secondAttribute="trailing" constant="10" id="c48-dZ-Ma3"/>
+                            <constraint firstItem="cha-gD-G8F" firstAttribute="top" secondItem="Kru-j1-WFd" secondAttribute="top" constant="45" id="sVu-4a-Ire"/>
+                            <constraint firstItem="cha-gD-G8F" firstAttribute="trailing" secondItem="inh-pz-vJT" secondAttribute="trailing" id="tsi-eJ-bam"/>
+                            <constraint firstAttribute="bottom" secondItem="cha-gD-G8F" secondAttribute="bottom" constant="504" id="x15-V8-IQ3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="c18-Tu-fm2"/>
+                    <connections>
+                        <outlet property="emailField" destination="dX5-N7-O8H" id="cUW-KG-Whb"/>
+                        <outlet property="historyOrders" destination="y0W-Sk-UUw" id="mFS-Wh-i7e"/>
+                        <outlet property="nameField" destination="zgA-E5-2w2" id="ZIo-a7-Med"/>
+                        <outlet property="surnameField" destination="vPe-wm-Drb" id="phx-F6-a33"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PW9-9v-B7o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4670.9923664122134" y="-61.267605633802823"/>
         </scene>
@@ -336,6 +375,9 @@
             <point key="canvasLocation" x="102" y="762"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="A8f-0U-38c"/>
+    </designables>
     <resources>
         <image name="basket.fill" catalog="system" width="128" height="108"/>
         <image name="fork.knife.circle.fill" catalog="system" width="128" height="123"/>

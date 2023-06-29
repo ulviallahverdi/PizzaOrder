@@ -21,7 +21,6 @@ class LoginController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         sc.readFromJsonFile()
-        print(sc.profiles)
         passwordField.delegate = self
         // Do any additional setup after loading the view.
     }
@@ -38,17 +37,11 @@ class LoginController: UIViewController, UITextFieldDelegate {
            let sceneDelegate = scene.delegate as? SceneDelegate  {
             
             if let email = emailField.text, let password = passwordField.text {
-                if email == (sc.profiles.map({ $0.email }))[0] {
-                    if password == (sc.profiles.map({ $0.password }))[0] {
+                if email == (sc.profiles.map({ $0.email }))[0] && password == (sc.profiles.map({ $0.password }))[0] {
                         UserDefaults.standard.set(true, forKey: "loggedIn")
                         sceneDelegate.setSecondRootController(windowScene: scene)
                     } else {
-//                        showEmailErrorAlert()
-                        print(email, password)
-                    }
-                } else {
-//                    showPasswordErrorAlert()
-                    print(password, email)
+                    showPasswordErrorAlert()
                 }
             }
             
@@ -59,14 +52,8 @@ class LoginController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func showEmailErrorAlert() {
-        let ac = UIAlertController(title: "Error", message: "Email is not correct or no account is exist", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OKAY", style: .default))
-        present(ac, animated: true)
-    }
-    
     func showPasswordErrorAlert() {
-        let ac = UIAlertController(title: "Error", message: "Password is incorrect.", preferredStyle: .alert)
+        let ac = UIAlertController(title: "Error", message: "Username or Password is incorrect.", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OKAY", style: .default))
         present(ac, animated: true)
     }

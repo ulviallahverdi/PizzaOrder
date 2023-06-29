@@ -10,9 +10,18 @@ import UIKit
 class ProfileController: UIViewController {
     
     let sc = StructureMain()
-
+    let profiles = [User]()
+    
+    @IBOutlet weak var historyOrders: UILabel!
+    @IBOutlet weak var emailField: UILabel!
+    @IBOutlet weak var surnameField: UILabel!
+    @IBOutlet weak var nameField: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sc.readFromJsonFile()
+        
         // Do any additional setup after loading the view.
     }
     
