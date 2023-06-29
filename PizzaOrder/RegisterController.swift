@@ -21,6 +21,7 @@ class RegisterController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         sc.readFromJsonFile()
+        print("calisti register conroller")
         // Do any additional setup after loading the view.
     }
     
@@ -31,6 +32,7 @@ class RegisterController: UIViewController {
             sc.profiles.append(User(name: name, surname: surname, email: email, password: password))
 //            sc.readFromJsonFile()
             sc.writeToJSonFile()
+//            navigationController?.popViewController(animated: true)
             dismiss(animated: true)
         } else {
             print("something wrong")

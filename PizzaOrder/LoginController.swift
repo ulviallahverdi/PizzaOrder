@@ -25,8 +25,8 @@ class LoginController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+    
+    override func viewDidLayoutSubviews() {
         sc.readFromJsonFile()
     }
     
@@ -42,14 +42,22 @@ class LoginController: UIViewController, UITextFieldDelegate {
            let sceneDelegate = scene.delegate as? SceneDelegate  {
             
             if let email = emailField.text, let password = passwordField.text {
-                
-                for data in sc.profiles {
-                    if email == data.email && password == data.password {
-                        UserDefaults.standard.set(true, forKey: "loggedIn")
-                        UserDefaults.standard.set(email, forKey: "loggedEmail")
-                        sceneDelegate.setSecondRootController(windowScene: scene)
+                if !email.isEmpty && !password.isEmpty {
+                    for data in sc.profiles {
+                        if email == data.email && password == data.password {
+                            UserDefaults.standard.set(true, forKey: "loggedIn")
+                            UserDefaults.standard.set(email, forKey: "loggedEmail")
+                            sceneDelegate.setSecondRootController(windowScene: scene)
+                        }
                     }
+                } else {
+                    FreeFieldsAlert()
                 }
+                
+                if !UserDefaults.standard.bool(forKey: "loggedIn") {
+                    showPasswordErrorAlert()
+                }
+                
             } else {
                 showPasswordErrorAlert()
             }
@@ -67,9 +75,17 @@ class LoginController: UIViewController, UITextFieldDelegate {
         present(ac, animated: true)
     }
     
+    func FreeFieldsAlert() {
+        let ac = UIAlertController(title: "Error", message: "Fields should not be empty!", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OKAY", style: .default))
+        present(ac, animated: true)
+    }
+    
     
     @IBAction func registerAction(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "\(RegisterController.self)") as! RegisterController
+//        vc.modalPresentationStyle = .automatic
+//        navigationController?.show(vc, sender: nil)
         present(vc, animated: true)
     }
     
