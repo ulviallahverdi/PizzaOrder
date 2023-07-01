@@ -16,6 +16,8 @@ struct User : Codable {
 
 
 struct Pizza: Codable {
+    let name: String?
+    let price: Int?
     
 }
 
