@@ -21,7 +21,6 @@ class ProfileController: UIViewController {
         super.viewDidLoad()
         sc.readFromJsonFile()
         sc.readUserDataFromJsonFile(email: UserDefaults.standard.string(forKey: "loggedEmail") ?? "")
-        print(sc.profile)
         emailField.text = "E-mail: " + (sc.profile[0].email ?? "")
         nameField.text = "Name: " + (sc.profile[0].name ?? "")
         surnameField.text = "Surname: " + (sc.profile[0].surname ?? "")
