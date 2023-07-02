@@ -22,8 +22,8 @@
 		E1E5CEBA2A4854D000DBC70D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1E5CEB82A4854D000DBC70D /* LaunchScreen.storyboard */; };
 		E1E5CEC42A4860BD00DBC70D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1E5CEC32A4860BD00DBC70D /* Main.storyboard */; };
 		E1E5CEC62A48652100DBC70D /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E5CEC52A48652100DBC70D /* RegisterController.swift */; };
-		E1F5807D2A5071F70025F033 /* PizzaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5807B2A5071F70025F033 /* PizzaCollectionViewCell.swift */; };
-		E1F5807E2A5071F70025F033 /* PizzaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1F5807C2A5071F70025F033 /* PizzaCollectionViewCell.xib */; };
+		E1F580862A5199860025F033 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F580842A5199860025F033 /* TableViewCell.swift */; };
+		E1F580872A5199860025F033 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1F580852A5199860025F033 /* TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,8 +46,8 @@
 		E1E5CEBB2A4854D000DBC70D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1E5CEC32A4860BD00DBC70D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E1E5CEC52A48652100DBC70D /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
-		E1F5807B2A5071F70025F033 /* PizzaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaCollectionViewCell.swift; sourceTree = "<group>"; };
-		E1F5807C2A5071F70025F033 /* PizzaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PizzaCollectionViewCell.xib; sourceTree = "<group>"; };
+		E1F580842A5199860025F033 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		E1F580852A5199860025F033 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +115,8 @@
 				E1E5CEC32A4860BD00DBC70D /* Main.storyboard */,
 				E1DE8E7F2A486D9F004839B1 /* login.json */,
 				E1E5CEBB2A4854D000DBC70D /* Info.plist */,
-				E1F5807B2A5071F70025F033 /* PizzaCollectionViewCell.swift */,
-				E1F5807C2A5071F70025F033 /* PizzaCollectionViewCell.xib */,
+				E1F580842A5199860025F033 /* TableViewCell.swift */,
+				E1F580852A5199860025F033 /* TableViewCell.xib */,
 			);
 			path = PizzaOrder;
 			sourceTree = "<group>";
@@ -182,7 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1E5CEC42A4860BD00DBC70D /* Main.storyboard in Resources */,
-				E1F5807E2A5071F70025F033 /* PizzaCollectionViewCell.xib in Resources */,
+				E1F580872A5199860025F033 /* TableViewCell.xib in Resources */,
 				E1E5CEBA2A4854D000DBC70D /* LaunchScreen.storyboard in Resources */,
 				E1E5CEB72A4854D000DBC70D /* Assets.xcassets in Resources */,
 				E1DE8E802A486D9F004839B1 /* login.json in Resources */,
@@ -244,11 +244,11 @@
 				E1E5CEB22A4854CE00DBC70D /* LoginController.swift in Sources */,
 				E1E5CEAE2A4854CE00DBC70D /* AppDelegate.swift in Sources */,
 				E11FA5732A488A000028C818 /* PizzaController.swift in Sources */,
+				E1F580862A5199860025F033 /* TableViewCell.swift in Sources */,
 				E1E5CEB02A4854CE00DBC70D /* SceneDelegate.swift in Sources */,
 				E1DE8E7C2A486587004839B1 /* DrinkController.swift in Sources */,
 				E1DE8E7A2A48657A004839B1 /* SousController.swift in Sources */,
 				E1DE8E782A486567004839B1 /* ProfileController.swift in Sources */,
-				E1F5807D2A5071F70025F033 /* PizzaCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

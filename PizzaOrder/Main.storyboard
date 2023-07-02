@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -169,44 +168,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Erk-uK-RuK">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Yzb-96-Kjh">
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="1" id="itb-D0-fUL">
-                                    <size key="itemSize" width="150" height="150"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" id="Z3J-JE-coZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" id="4Qi-zW-OR5">
-                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                        <color key="backgroundColor" systemColor="linkColor"/>
-                                    </collectionViewCell>
-                                </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="Lh6-rg-3l1" id="NBv-aX-I1y"/>
-                                    <outlet property="delegate" destination="Lh6-rg-3l1" id="52T-Ym-GAx"/>
+                                    <outlet property="dataSource" destination="Lh6-rg-3l1" id="wqD-kX-DSm"/>
+                                    <outlet property="delegate" destination="Lh6-rg-3l1" id="zdI-ax-Gub"/>
                                 </connections>
-                            </collectionView>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oa4-g6-hdX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Erk-uK-RuK" firstAttribute="top" secondItem="oa4-g6-hdX" secondAttribute="top" id="Lak-vz-C2R"/>
-                            <constraint firstItem="oa4-g6-hdX" firstAttribute="trailing" secondItem="Erk-uK-RuK" secondAttribute="trailing" id="PIS-q4-cRP"/>
-                            <constraint firstItem="oa4-g6-hdX" firstAttribute="bottom" secondItem="Erk-uK-RuK" secondAttribute="bottom" id="Qmp-5X-hv2"/>
-                            <constraint firstItem="Erk-uK-RuK" firstAttribute="leading" secondItem="oa4-g6-hdX" secondAttribute="leading" id="aCT-f0-0b2"/>
+                            <constraint firstItem="Yzb-96-Kjh" firstAttribute="top" secondItem="oa4-g6-hdX" secondAttribute="top" id="0Tm-Jp-CzU"/>
+                            <constraint firstItem="oa4-g6-hdX" firstAttribute="trailing" secondItem="Yzb-96-Kjh" secondAttribute="trailing" id="6mp-1b-Lr2"/>
+                            <constraint firstItem="Yzb-96-Kjh" firstAttribute="leading" secondItem="oa4-g6-hdX" secondAttribute="leading" id="i2f-ez-egl"/>
+                            <constraint firstItem="oa4-g6-hdX" firstAttribute="bottom" secondItem="Yzb-96-Kjh" secondAttribute="bottom" id="n0p-hJ-hW0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bXV-dq-Bqn"/>
                     <connections>
-                        <outlet property="collection" destination="Erk-uK-RuK" id="9W1-VM-qEk"/>
+                        <outlet property="table" destination="Yzb-96-Kjh" id="qRB-Oi-RSV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXg-Q6-s2u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -439,9 +421,6 @@
         <image name="wineglass.fill" catalog="system" width="95" height="128"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

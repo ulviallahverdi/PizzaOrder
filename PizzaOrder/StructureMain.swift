@@ -18,6 +18,7 @@ struct User : Codable {
 struct Pizza: Codable {
     let name: String?
     let price: Int?
+    let image: String?
     
 }
 
@@ -34,6 +35,21 @@ class StructureMain: UIViewController {
     
     var profiles = [User]()
     var profile = [User]()
+    var pizzas = [Pizza]()
+    
+    func writeToJsonFileForPizza() {
+        pizzas.append(Pizza(name: "Margarita", price: 15, image: "margarita"))
+        pizzas.append(Pizza(name: "Cheese", price: 10, image: "cheese"))
+        pizzas.append(Pizza(name: "Vegeterian", price: 30, image: "vegeterian"))
+        
+        do {
+            let data = try JSONEncoder().encode(pizzas)
+            try data.write(to: getFilePathForPizza())
+        } catch {
+            
+        }
+        
+    }
 
     func readFromJsonFile() {
         do {
@@ -54,6 +70,13 @@ class StructureMain: UIViewController {
         } catch {
             print(error.localizedDescription)
         }
+    }
+    
+    func getFilePathForPizza() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let docDicrectory = paths[0]
+        let path = docDicrectory.appending(component: "Pizza.json")
+        return path
     }
 
     func getFilePath() -> URL {

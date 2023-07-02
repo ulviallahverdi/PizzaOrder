@@ -7,56 +7,34 @@
 
 import UIKit
 
-class PizzaController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class PizzaController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    let lc = StructureMain()
+    @IBOutlet weak var table: UITableView!
+    var pizzas = [Pizza]()
     
     
-    @IBOutlet weak var collection: UICollectionView!
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        3
     }
     
-    
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PizzaCollectionViewCell", for: indexPath) as! PizzaCollectionViewCell
-
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
+        cell.pizzaAdi.text = "Salam"
         return cell
     }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        collection.register(UINib(nibName: "PizzaCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PizzaCollectionViewCell")
-        
-        
+        print(lc.getFilePathForPizza())
+        lc.writeToJsonFileForPizza()
+        table.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.bounds.width
-        let itemWidth = width/2
-        let itemHeight: CGFloat = 100
-        return CGSize(width: itemWidth, height: itemHeight)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        let leftInset: CGFloat = 0 // Sol iç kenarlık
-            let rightInset: CGFloat = 150 // Sağ iç kenarlık
-            let topInset: CGFloat = 0 // Üst iç kenarlık
-            let bottomInset: CGFloat = 0 // Alt iç kenarlık
-            
-            return UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
-
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0 // Satır aralığı
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100 // Hücreler arasındaki boşluk yüksekliği
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0 // Sütun aralığı
-    }
-
-    
 
 }
