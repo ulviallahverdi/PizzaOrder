@@ -20,12 +20,6 @@
                         <rect key="frame" x="16" y="31" width="47" height="39"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmb-hv-fW8">
-                        <rect key="frame" x="335" y="32" width="47" height="35"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="filled" image="plus" catalog="system" title=""/>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Margarita Pizza" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YND-cH-vDs">
                         <rect key="frame" x="137" y="39" width="118" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -33,18 +27,37 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmb-hv-fW8">
+                        <rect key="frame" x="299" y="36" width="28" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled" image="plus" catalog="system" title=""/>
+                        <connections>
+                            <action selector="buttonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="b0A-1C-MmZ"/>
+                            <action selector="orderClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Q1T-5g-6jU"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UuC-6z-slx">
+                        <rect key="frame" x="342" y="36" width="27" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled" image="minus.circle" catalog="system" title=""/>
+                        <connections>
+                            <action selector="minusClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jS0-I3-Gj2"/>
+                        </connections>
+                    </button>
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="buttonClicked" destination="zmb-hv-fW8" id="Uz1-eq-fZ8"/>
                 <outlet property="pizzaAdi" destination="YND-cH-vDs" id="8cM-bQ-9g7"/>
                 <outlet property="sekilView" destination="mb9-90-FJd" id="H5D-RU-lFw"/>
             </connections>
-            <point key="canvasLocation" x="185.49618320610685" y="19.014084507042256"/>
+            <point key="canvasLocation" x="183.96946564885496" y="19.014084507042256"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="minus.circle" catalog="system" width="128" height="123"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="soccerball.circle.inverse" catalog="system" width="128" height="123"/>
     </resources>

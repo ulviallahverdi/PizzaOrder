@@ -9,10 +9,12 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     
+    let lc = PizzaController()
     
+    @IBOutlet weak var plusClicked: UIButton!
     @IBOutlet weak var sekilView: UIImageView!
+
     
-    @IBOutlet weak var buttonClicked: UIButton!
     @IBOutlet weak var pizzaAdi: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,5 +26,4 @@ class TableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }
