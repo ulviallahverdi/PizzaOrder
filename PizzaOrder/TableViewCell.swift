@@ -11,11 +11,6 @@ protocol CustomPizzaViewCell: AnyObject {
     func buttonTapped(withData data: String)
 }
 
-struct PizzaBasket: Codable {
-    var pizzaList: [Pizza]
-    
-}
-
 class TableViewCell: UITableViewCell {
     
     let lc = PizzaController()
@@ -36,10 +31,13 @@ class TableViewCell: UITableViewCell {
     
     @IBAction func plusClicked(_ sender: Any) {
         if let ip = indexPath {
+            print("Before",pizzaListIncrease)
             delegate?.buttonTapped(withData: pizzas?[ip.row].name ?? "")
-            pizzaListIncrease.append(PizzaBasket(pizzaList: [Pizza(name: "yf", price: 34, image: "dfd")]))
-            print(pizzaListIncrease)
+            pizzaListIncrease.append(PizzaBasket(pizzaList: [Pizza(name: pizzas?[ip.row].name, price: pizzas?[ip.row].price, image: pizzas?[ip.row].image)], sousList: [], drinkList: []))
+            print("after: ",pizzaListIncrease)
+
         }
+        print("end:",pizzaListIncrease)
     }
     
 

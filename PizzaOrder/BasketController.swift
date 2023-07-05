@@ -17,7 +17,12 @@ struct Drink: Codable {
     let price: Int
 }
 
-
+struct PizzaBasket: Codable {
+    var pizzaList: [Pizza]
+    var sousList: [Sous]
+    var drinkList: [Drink]
+    
+}
 
 class BasketController: UIViewController {
 
