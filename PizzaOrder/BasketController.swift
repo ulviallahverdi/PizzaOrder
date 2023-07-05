@@ -7,6 +7,18 @@
 
 import UIKit
 
+struct Sous: Codable {
+    let name: String
+    let price : Int
+}
+
+struct Drink: Codable {
+    let name: String
+    let price: Int
+}
+
+
+
 class BasketController: UIViewController {
 
     override func viewDidLoad() {

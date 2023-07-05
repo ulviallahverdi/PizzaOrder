@@ -33,8 +33,7 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="filled" image="plus" catalog="system" title=""/>
                         <connections>
-                            <action selector="buttonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="b0A-1C-MmZ"/>
-                            <action selector="orderClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Q1T-5g-6jU"/>
+                            <action selector="plusClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KJt-K3-hBa"/>
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UuC-6z-slx">
@@ -42,9 +41,6 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="filled" image="minus.circle" catalog="system" title=""/>
-                        <connections>
-                            <action selector="minusClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jS0-I3-Gj2"/>
-                        </connections>
                     </button>
                 </subviews>
             </tableViewCellContentView>

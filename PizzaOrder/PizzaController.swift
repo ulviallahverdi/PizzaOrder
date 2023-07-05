@@ -7,7 +7,12 @@
 
 import UIKit
 
-class PizzaController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class PizzaController: UIViewController, UITableViewDataSource, UITableViewDelegate, CustomPizzaViewCell {
+    
+    func buttonTapped(withData data: String) {
+        print(data)
+    }
+    
     
     let lc = StructureMain()
     @IBOutlet weak var table: UITableView!
@@ -29,7 +34,10 @@ class PizzaController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
+        cell.delegate = self
+        cell.indexPath = indexPath
         cell.pizzaAdi.text = pizzas[indexPath.item].name
+        cell.pizzas = pizzas
         cell.sekilView.image = UIImage(named: "\(pizzas[indexPath.item].image ?? "noimage")")
         return cell
     }
@@ -38,7 +46,7 @@ class PizzaController: UIViewController, UITableViewDataSource, UITableViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
 //        print(lc.getFilePathForPizza())
-        lc.writeToJsonFileForPizza()
+//        lc.writeToJsonFileForPizza()
         readPizzaFromJsonFile()
         table.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
     }
