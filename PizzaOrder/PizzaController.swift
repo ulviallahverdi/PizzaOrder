@@ -10,11 +10,13 @@ import UIKit
 class PizzaController: UIViewController, UITableViewDataSource, UITableViewDelegate, CustomPizzaViewCell {
     
     func buttonTapped(withData data: String) {
-        print(data)
+        table.reloadData()
     }
     
     
     let lc = StructureMain()
+    
+    var basket = [PizzaBasket]()
     @IBOutlet weak var table: UITableView!
     var pizzas = [Pizza]()
     
@@ -25,6 +27,22 @@ class PizzaController: UIViewController, UITableViewDataSource, UITableViewDeleg
         } catch {
             print(error.localizedDescription)
         }
+    }
+    
+    func readPizzaBasketFromJson() {
+        do {
+            let data = try Data(contentsOf: getFilePathForBasket())
+            basket = try JSONDecoder().decode([PizzaBasket].self, from: data)
+        } catch {
+                
+        }
+    }
+    
+    func getFilePathForBasket() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let docDirectory = paths[0]
+        let path = docDirectory.appending(component: "Basket.json")
+        return path
     }
     
     
@@ -38,6 +56,11 @@ class PizzaController: UIViewController, UITableViewDataSource, UITableViewDeleg
         cell.indexPath = indexPath
         cell.pizzaAdi.text = pizzas[indexPath.item].name
         cell.pizzas = pizzas
+        readPizzaBasketFromJson()
+        let count = basket.reduce(0) { result, pizzaBasket in
+            result + pizzaBasket.pizzaList.filter { $0.name == pizzas[indexPath.item].name }.count
+        }
+        cell.orderCount.text = "\(count)"
         cell.sekilView.image = UIImage(named: "\(pizzas[indexPath.item].image ?? "noimage")")
         return cell
     }

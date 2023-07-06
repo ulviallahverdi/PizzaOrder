@@ -33,9 +33,12 @@ class StructureMain: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    
     var profiles = [User]()
     var profile = [User]()
     var pizzas = [Pizza]()
+    var basket = [PizzaBasket]()
     
     func writeToJsonFileForPizza() {
         pizzas.append(Pizza(name: "Margarita", price: 15, image: "margarita"))
@@ -46,10 +49,13 @@ class StructureMain: UIViewController {
             let data = try JSONEncoder().encode(pizzas)
             try data.write(to: getFilePathForPizza())
         } catch {
-            
+            print(error.localizedDescription)
         }
-        
     }
+    
+    
+    
+    
 
     func readFromJsonFile() {
         do {
@@ -59,6 +65,8 @@ class StructureMain: UIViewController {
             print(error.localizedDescription)
         }
     }
+    
+    
     
     func readUserDataFromJsonFile(email: String) {
         do {
