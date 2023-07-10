@@ -48,7 +48,8 @@ class TableViewCell: UITableViewCell {
     func getFilePathForBasket() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let docDirectory = paths[0]
-        let path = docDirectory.appending(component: "Basket.json")
+//        let path = docDirectory.appending(component: "Basket.json")
+        let path = docDirectory.appendingPathComponent("Basket.json")
         return path
     }
     
@@ -65,7 +66,7 @@ class TableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        print(getFilePathForBasket())
+//        print(getFilePathForBasket())
         // Initialization code
     }
     
@@ -75,7 +76,6 @@ class TableViewCell: UITableViewCell {
             delegate?.buttonTapped(withData: pizzas[ip.row].name ?? "")
             basket.append(PizzaBasket(pizzaList: [Pizza(name: pizzas[ip.row].name, price: pizzas[ip.row].price, image: pizzas[ip.row].image)], sousList: [], drinkList: []))
             writeToBasketJson()
-            print(ip.row)
         }
     }
     
@@ -87,7 +87,7 @@ class TableViewCell: UITableViewCell {
             let indices = basket.enumerated().compactMap { index, pizzaBasket in
                 pizzaBasket.pizzaList.contains { $0.name == nameToFind } ? index : nil
             }
-            print(indices) // Output: [0, 1, 2, 3]
+//            print(indices) // Output: [0, 1, 2, 3]
             
             let randomIndex = indices.randomElement()
             if let index = randomIndex {

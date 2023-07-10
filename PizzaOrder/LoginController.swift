@@ -24,6 +24,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
         UserDefaults.standard.set(false, forKey: "loggedIn")
         passwordField.delegate = self
         // Do any additional setup after loading the view.
+        print(sc.readFromJsonFile())
     }
     
     

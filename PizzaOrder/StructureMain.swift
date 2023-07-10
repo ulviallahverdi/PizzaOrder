@@ -83,14 +83,16 @@ class StructureMain: UIViewController {
     func getFilePathForPizza() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let docDicrectory = paths[0]
-        let path = docDicrectory.appending(component: "Pizza.json")
+//        let path = docDicrectory.appending(component: "Pizza.json")
+        let path = docDicrectory.appendingPathComponent("Pizza.json")
         return path
     }
 
     func getFilePath() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let docDicrectory = paths[0]
-        let path = docDicrectory.appending(component: "Users.json")
+//        let path = docDicrectory.appending(component: "Users.json")
+        let path = docDicrectory.appendingPathComponent("Users.json")
         return path
     }
 

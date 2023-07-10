@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R3T-Fx-MXB">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -163,37 +164,48 @@
         <!--Pizza Controller-->
         <scene sceneID="vhO-Ru-9lf">
             <objects>
-                <viewController storyboardIdentifier="PizzaController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lh6-rg-3l1" customClass="PizzaController" customModule="PizzaOrder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Lh6-rg-3l1" customClass="PizzaController" customModule="PizzaOrder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mOp-2d-I0e">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Yzb-96-Kjh">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="591"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Lh6-rg-3l1" id="wqD-kX-DSm"/>
                                     <outlet property="delegate" destination="Lh6-rg-3l1" id="zdI-ax-Gub"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYC-p4-4xR">
+                                <rect key="frame" x="159" y="701.66666666666663" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="continueToSousSelection:" destination="Lh6-rg-3l1" eventType="touchUpInside" id="glA-sD-ivD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oa4-g6-hdX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Yzb-96-Kjh" firstAttribute="top" secondItem="oa4-g6-hdX" secondAttribute="top" id="0Tm-Jp-CzU"/>
                             <constraint firstItem="oa4-g6-hdX" firstAttribute="trailing" secondItem="Yzb-96-Kjh" secondAttribute="trailing" id="6mp-1b-Lr2"/>
+                            <constraint firstItem="zYC-p4-4xR" firstAttribute="leading" secondItem="Yzb-96-Kjh" secondAttribute="trailing" constant="-234" id="JU8-Pg-6ta"/>
                             <constraint firstItem="Yzb-96-Kjh" firstAttribute="leading" secondItem="oa4-g6-hdX" secondAttribute="leading" id="i2f-ez-egl"/>
-                            <constraint firstItem="oa4-g6-hdX" firstAttribute="bottom" secondItem="Yzb-96-Kjh" secondAttribute="bottom" id="n0p-hJ-hW0"/>
+                            <constraint firstItem="oa4-g6-hdX" firstAttribute="bottom" secondItem="Yzb-96-Kjh" secondAttribute="bottom" constant="75" id="n0p-hJ-hW0"/>
+                            <constraint firstItem="zYC-p4-4xR" firstAttribute="top" secondItem="Yzb-96-Kjh" secondAttribute="bottom" constant="7.6666666666666288" id="u2I-he-Myx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bXV-dq-Bqn"/>
                     <connections>
+                        <outlet property="button" destination="zYC-p4-4xR" id="Cle-Id-v47"/>
                         <outlet property="table" destination="Yzb-96-Kjh" id="qRB-Oi-RSV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXg-Q6-s2u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5185.4961832061063" y="1083.8028169014085"/>
+            <point key="canvasLocation" x="5183.9694656488546" y="1083.8028169014085"/>
         </scene>
         <!--Drink-->
         <scene sceneID="PHT-r8-0Xm">
@@ -281,7 +293,7 @@
             </objects>
             <point key="canvasLocation" x="4670.9923664122134" y="-61.267605633802823"/>
         </scene>
-        <!--Sous-->
+        <!--Sous Controller-->
         <scene sceneID="iFQ-a2-VTU">
             <objects>
                 <viewController storyboardIdentifier="SousController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JV9-td-J3Y" customClass="SousController" customModule="PizzaOrder" customModuleProvider="target" sceneMemberID="viewController">
@@ -291,13 +303,13 @@
                         <viewLayoutGuide key="safeArea" id="sw1-E8-use"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Sous" image="takeoutbag.and.cup.and.straw" catalog="system" id="cWJ-Ev-Nem"/>
+                    <navigationItem key="navigationItem" id="Oh5-Qs-n34"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kng-xd-wqH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5575" y="-61"/>
+            <point key="canvasLocation" x="6501.5267175572517" y="-61.267605633802823"/>
         </scene>
-        <!--Basket-->
+        <!--Basket Controller-->
         <scene sceneID="fUm-w0-CGD">
             <objects>
                 <viewController storyboardIdentifier="BasketController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1w6-Ce-2zj" customClass="BasketController" customModule="PizzaOrder" customModuleProvider="target" sceneMemberID="viewController">
@@ -307,11 +319,11 @@
                         <viewLayoutGuide key="safeArea" id="3VV-Fq-D1l"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Basket" image="basket.fill" catalog="system" id="dmy-SX-seb"/>
+                    <navigationItem key="navigationItem" id="c3C-7V-yUK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hgv-Wa-1Bb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7402.2900763358775" y="517.6056338028169"/>
+            <point key="canvasLocation" x="9255.7251908396938" y="517.6056338028169"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2Ry-Yd-8TQ">
@@ -325,9 +337,9 @@
                     <connections>
                         <segue destination="hMu-uh-MoW" kind="relationship" relationship="viewControllers" id="EY8-gg-qNr"/>
                         <segue destination="HpB-af-7Dp" kind="relationship" relationship="viewControllers" id="838-yj-msz"/>
-                        <segue destination="JV9-td-J3Y" kind="relationship" relationship="viewControllers" id="o70-Gp-BHW"/>
+                        <segue destination="n5o-Iz-5VX" kind="relationship" relationship="viewControllers" id="o70-Gp-BHW"/>
                         <segue destination="GnZ-uV-mje" kind="relationship" relationship="viewControllers" id="vDI-9w-9Tc"/>
-                        <segue destination="1w6-Ce-2zj" kind="relationship" relationship="viewControllers" id="isL-iH-DZd"/>
+                        <segue destination="cKb-YE-i9z" kind="relationship" relationship="viewControllers" id="isL-iH-DZd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dc8-hl-Kgk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -395,7 +407,7 @@
         <!--Pizza-->
         <scene sceneID="oZd-dE-g6p">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HpB-af-7Dp" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="pizzaNav" automaticallyAdjustsScrollViewInsets="NO" id="HpB-af-7Dp" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Pizza" image="fork.knife.circle.fill" catalog="system" id="d3Z-qD-5MK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Cf-IQ-QuU">
@@ -410,6 +422,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0n7-CS-Uvl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4258.7786259541981" y="1083.8028169014085"/>
+        </scene>
+        <!--Basket-->
+        <scene sceneID="GCP-pj-FdX">
+            <objects>
+                <navigationController storyboardIdentifier="basketNav" automaticallyAdjustsScrollViewInsets="NO" id="cKb-YE-i9z" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Basket" image="basket.fill" catalog="system" id="dmy-SX-seb"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nSs-Jk-3d0">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1w6-Ce-2zj" kind="relationship" relationship="rootViewController" id="amN-wn-9td"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DNZ-rU-U6b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8329.0076335877857" y="517.6056338028169"/>
+        </scene>
+        <!--Sous-->
+        <scene sceneID="ZR5-rX-MWv">
+            <objects>
+                <navigationController storyboardIdentifier="sousNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n5o-Iz-5VX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Sous" image="takeoutbag.and.cup.and.straw" catalog="system" id="cWJ-Ev-Nem"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bl5-vI-sA1">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JV9-td-J3Y" kind="relationship" relationship="rootViewController" id="Bf6-rK-aBK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AU8-a0-pjc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5574.8091603053435" y="-61.267605633802823"/>
         </scene>
     </scenes>
     <resources>
