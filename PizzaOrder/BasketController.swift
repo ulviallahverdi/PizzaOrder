@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Sous: Codable {
+struct Sous: Encodable, Decodable {
     let name: String
     let price : Int
 }
@@ -33,6 +33,8 @@ class BasketController: UIViewController {
     }
     
     var pizzaListIncrease = [PizzaBasket]()
+    
+    
 
 
 }

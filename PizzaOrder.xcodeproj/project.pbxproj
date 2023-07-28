@@ -10,6 +10,7 @@
 		8402117B6E9817042284394A /* Pods_PizzaOrder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E7547855405FCCD66010CD /* Pods_PizzaOrder.framework */; };
 		E11FA5732A488A000028C818 /* PizzaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11FA5722A488A000028C818 /* PizzaController.swift */; };
 		E19F78BC2A4CD20F0073AC62 /* StructureMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19F78BB2A4CD20F0073AC62 /* StructureMain.swift */; };
+		E1C2A04F2A670D73005BBE8E /* SousCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C2A04E2A670D73005BBE8E /* SousCollectionViewCell.swift */; };
 		E1DE8E782A486567004839B1 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DE8E772A486567004839B1 /* ProfileController.swift */; };
 		E1DE8E7A2A48657A004839B1 /* SousController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DE8E792A48657A004839B1 /* SousController.swift */; };
 		E1DE8E7C2A486587004839B1 /* DrinkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DE8E7B2A486587004839B1 /* DrinkController.swift */; };
@@ -32,6 +33,7 @@
 		C5699264C9C49373401A3A10 /* Pods-PizzaOrder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaOrder.debug.xcconfig"; path = "Target Support Files/Pods-PizzaOrder/Pods-PizzaOrder.debug.xcconfig"; sourceTree = "<group>"; };
 		E11FA5722A488A000028C818 /* PizzaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaController.swift; sourceTree = "<group>"; };
 		E19F78BB2A4CD20F0073AC62 /* StructureMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructureMain.swift; sourceTree = "<group>"; };
+		E1C2A04E2A670D73005BBE8E /* SousCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SousCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1DE8E772A486567004839B1 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		E1DE8E792A48657A004839B1 /* SousController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SousController.swift; sourceTree = "<group>"; };
 		E1DE8E7B2A486587004839B1 /* DrinkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				E11FA5722A488A000028C818 /* PizzaController.swift */,
 				E1DE8E772A486567004839B1 /* ProfileController.swift */,
 				E1DE8E792A48657A004839B1 /* SousController.swift */,
+				E1C2A04E2A670D73005BBE8E /* SousCollectionViewCell.swift */,
 				E1DE8E7B2A486587004839B1 /* DrinkController.swift */,
 				E1DE8E7D2A486595004839B1 /* BasketController.swift */,
 				E19F78BB2A4CD20F0073AC62 /* StructureMain.swift */,
@@ -242,6 +245,7 @@
 				E1E5CEC62A48652100DBC70D /* RegisterController.swift in Sources */,
 				E19F78BC2A4CD20F0073AC62 /* StructureMain.swift in Sources */,
 				E1E5CEB22A4854CE00DBC70D /* LoginController.swift in Sources */,
+				E1C2A04F2A670D73005BBE8E /* SousCollectionViewCell.swift in Sources */,
 				E1E5CEAE2A4854CE00DBC70D /* AppDelegate.swift in Sources */,
 				E11FA5732A488A000028C818 /* PizzaController.swift in Sources */,
 				E1F580862A5199860025F033 /* TableViewCell.swift in Sources */,
@@ -397,7 +401,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -429,7 +433,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

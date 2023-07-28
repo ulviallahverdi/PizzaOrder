@@ -69,6 +69,7 @@ class PizzaController: UIViewController, UITableViewDataSource, UITableViewDeleg
         }
         cell.orderCount.text = "\(count)"
         cell.sekilView.image = UIImage(named: "\(pizzas[indexPath.item].image ?? "noimage")")
+        
         return cell
     }
     
@@ -79,34 +80,12 @@ class PizzaController: UIViewController, UITableViewDataSource, UITableViewDeleg
         lc.writeToJsonFileForPizza()
         readPizzaFromJsonFile()
         print("came to PizzaController")
-        button.addTarget(self, action: #selector(goToSousTab()), for: .touchUpInside)
+//        button.addTarget(self, action: #selector(goToSousTab()), for: .touchUpInside)
         table.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        print("viewwillDisappear")
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        print("viewwillappear")
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100 // Hücreler arasındaki boşluk yüksekliği
-    }
-    
-    @objc private func goToSousTab() {
-            // Get the reference to the tab bar controller
-        guard let tabBarVC = tabBarController else { return }
-
-            // Set the selected index to switch to the "Sous" tab
-            tabBarVC.selectedIndex = 2
-        }
-    
-
-    @IBAction func continueToSousSelection(_ sender: Any) {
-        
-            
+        return 100
     }
     
                          
