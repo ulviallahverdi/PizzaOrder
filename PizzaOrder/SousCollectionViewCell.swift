@@ -9,8 +9,7 @@ import UIKit
 
 class SousCollectionViewCell: UICollectionViewCell {
     
-    
     @IBOutlet weak var textLabel: UILabel!
-    @IBOutlet weak var checkTick: UILabel!
+    @IBOutlet weak var yaziLabel: UILabel!
     
 }

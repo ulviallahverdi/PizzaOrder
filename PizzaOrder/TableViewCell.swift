@@ -74,7 +74,7 @@ class TableViewCell: UITableViewCell {
         if let ip = indexPath {
             readPizzaBasketFromJson()
             delegate?.buttonTapped(withData: pizzas[ip.row].name ?? "")
-            basket.append(PizzaBasket(pizzaList: [Pizza(name: pizzas[ip.row].name, price: pizzas[ip.row].price, image: pizzas[ip.row].image)], sousList: [], drinkList: []))
+            basket.append(PizzaBasket(pizzaList: [Pizza(name: pizzas[ip.row].name, price: pizzas[ip.row].price, image: pizzas[ip.row].image)]))
             writeToBasketJson()
         }
     }

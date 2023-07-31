@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Sous: Encodable, Decodable {
+struct Sous: Codable {
     let name: String
     let price : Int
 }
@@ -19,9 +19,10 @@ struct Drink: Codable {
 
 struct PizzaBasket: Codable {
     var pizzaList: [Pizza]
+}
+
+struct SousBasket: Codable {
     var sousList: [Sous]
-    var drinkList: [Drink]
-    
 }
 
 class BasketController: UIViewController {
