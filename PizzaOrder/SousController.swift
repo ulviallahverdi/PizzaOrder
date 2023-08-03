@@ -12,7 +12,7 @@ class SousController: UIViewController, UICollectionViewDataSource, UICollection
     var sousList = [Sous]()
     var basketList = [PizzaBasket]()
     var pizzas = [Pizza]()
-    var sousBasket = [SousBasket]()
+    var sousBasket = SousBasket(sousList: [Sous]())
     
     let pizzaControllerCall = PizzaController()
     
@@ -49,7 +49,7 @@ class SousController: UIViewController, UICollectionViewDataSource, UICollection
         writeToSousBasketJSonFile()
 //        writeToSousJsonFile()
         
-        readFromSousListFromJsonFile()
+//        readFromSousListFromJsonFile()
         
         // Do any additional setup after loading the view.
     }
@@ -97,10 +97,14 @@ class SousController: UIViewController, UICollectionViewDataSource, UICollection
                 
                 if cell.yaziLabel.text == "+" {
                     cell.yaziLabel.text = "Add"
+                    sousBasket.sousList.remove(at: indexPath.item)
+
+                    
+                    writeToSousBasketJSonFile()
                 } else {
                     cell.yaziLabel.text = "+"
                     print(sousList[indexPath.item].name)
-                    sousBasket.append(SousBasket(sousList: [Sous(name: sousList[indexPath.item].name, price: sousList[indexPath.item].price)]))
+                    sousBasket.sousList.append(Sous(name: sousList[indexPath.item].name, price: sousList[indexPath.item].price))
                     writeToSousBasketJSonFile()
                 }
             }
