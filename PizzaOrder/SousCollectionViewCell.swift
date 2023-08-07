@@ -12,4 +12,9 @@ class SousCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var yaziLabel: UILabel!
     
+    
+    @IBOutlet weak var drinkLabel: UILabel!
+    
+    
+    
 }

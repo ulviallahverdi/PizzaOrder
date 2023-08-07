@@ -207,21 +207,50 @@
             </objects>
             <point key="canvasLocation" x="5183.9694656488546" y="1083.8028169014085"/>
         </scene>
-        <!--Drink-->
+        <!--Drink Controller-->
         <scene sceneID="PHT-r8-0Xm">
             <objects>
                 <viewController storyboardIdentifier="DrinkController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GnZ-uV-mje" customClass="DrinkController" customModule="PizzaOrder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eHo-D3-Slu">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AjA-PA-dab">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ziv-74-fti">
+                                    <size key="itemSize" width="393" height="131"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="GnZ-uV-mje" id="9a3-9r-UbV"/>
+                                    <outlet property="delegate" destination="GnZ-uV-mje" id="yBg-FA-WYm"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="8aK-ZS-LDD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AjA-PA-dab" firstAttribute="leading" secondItem="8aK-ZS-LDD" secondAttribute="leading" id="3QN-OQ-Bzm"/>
+                            <constraint firstItem="8aK-ZS-LDD" firstAttribute="trailing" secondItem="AjA-PA-dab" secondAttribute="trailing" id="9Qx-w0-PXa"/>
+                            <constraint firstItem="AjA-PA-dab" firstAttribute="trailing" secondItem="8aK-ZS-LDD" secondAttribute="trailing" id="E6Q-7c-FAR"/>
+                            <constraint firstItem="AjA-PA-dab" firstAttribute="top" secondItem="8aK-ZS-LDD" secondAttribute="top" id="Owy-Xr-OtB"/>
+                            <constraint firstItem="8aK-ZS-LDD" firstAttribute="bottom" secondItem="AjA-PA-dab" secondAttribute="bottom" id="Tir-CC-fYl"/>
+                            <constraint firstItem="AjA-PA-dab" firstAttribute="top" secondItem="8aK-ZS-LDD" secondAttribute="top" id="d75-vh-6L3"/>
+                            <constraint firstItem="AjA-PA-dab" firstAttribute="leading" secondItem="8aK-ZS-LDD" secondAttribute="leading" id="ncI-CZ-CYE"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Drink" image="wineglass.fill" catalog="system" id="4Fe-3U-0Zr"/>
+                    <navigationItem key="navigationItem" id="6UB-tB-XNf"/>
+                    <connections>
+                        <outlet property="collection" destination="AjA-PA-dab" id="dzn-ht-F5k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PDq-gk-Clc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6060.3053435114498" y="1083.8028169014085"/>
+            <point key="canvasLocation" x="6987.0229007633588" y="1083.8028169014085"/>
         </scene>
         <!--Profile Controller-->
         <scene sceneID="A38-tD-Aye">
@@ -381,14 +410,37 @@
                     <view key="view" contentMode="scaleToFill" id="GTm-Yz-LWt">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Nbd-cN-3Sk">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vdF-G9-Z53">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="1w6-Ce-2zj" id="UtD-0i-Pqt"/>
+                                    <outlet property="delegate" destination="1w6-Ce-2zj" id="KZh-rf-Hlu"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="3VV-Fq-D1l"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3VV-Fq-D1l" firstAttribute="bottom" secondItem="Nbd-cN-3Sk" secondAttribute="bottom" id="DeD-Xx-r7Q"/>
+                            <constraint firstItem="Nbd-cN-3Sk" firstAttribute="leading" secondItem="3VV-Fq-D1l" secondAttribute="leading" id="HEz-vZ-TcQ"/>
+                            <constraint firstItem="3VV-Fq-D1l" firstAttribute="trailing" secondItem="Nbd-cN-3Sk" secondAttribute="trailing" id="sX1-Gs-KMM"/>
+                            <constraint firstItem="Nbd-cN-3Sk" firstAttribute="top" secondItem="3VV-Fq-D1l" secondAttribute="top" id="z8J-lO-s3R"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="c3C-7V-yUK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hgv-Wa-1Bb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9255.7251908396938" y="517.6056338028169"/>
+            <point key="canvasLocation" x="10182.442748091602" y="517.6056338028169"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2Ry-Yd-8TQ">
@@ -403,7 +455,7 @@
                         <segue destination="hMu-uh-MoW" kind="relationship" relationship="viewControllers" id="EY8-gg-qNr"/>
                         <segue destination="HpB-af-7Dp" kind="relationship" relationship="viewControllers" id="838-yj-msz"/>
                         <segue destination="n5o-Iz-5VX" kind="relationship" relationship="viewControllers" id="o70-Gp-BHW"/>
-                        <segue destination="GnZ-uV-mje" kind="relationship" relationship="viewControllers" id="vDI-9w-9Tc"/>
+                        <segue destination="2XN-yC-DS6" kind="relationship" relationship="viewControllers" id="vDI-9w-9Tc"/>
                         <segue destination="cKb-YE-i9z" kind="relationship" relationship="viewControllers" id="isL-iH-DZd"/>
                     </connections>
                 </tabBarController>
@@ -505,7 +557,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DNZ-rU-U6b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8329.0076335877857" y="517.6056338028169"/>
+            <point key="canvasLocation" x="9255.7251908396938" y="517.6056338028169"/>
         </scene>
         <!--Sous-->
         <scene sceneID="ZR5-rX-MWv">
@@ -526,10 +578,26 @@
             </objects>
             <point key="canvasLocation" x="5574.8091603053435" y="-61.267605633802823"/>
         </scene>
+        <!--Drink-->
+        <scene sceneID="HZl-Kh-yKD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2XN-yC-DS6" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Drink" image="wineglass.fill" catalog="system" id="4Fe-3U-0Zr"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dkr-oU-aO4">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GnZ-uV-mje" kind="relationship" relationship="rootViewController" id="8cA-5M-DQr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cBY-4y-R04" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6060.3053435114498" y="1083.8028169014085"/>
+        </scene>
     </scenes>
-    <designables>
-        <designable name="A8f-0U-38c"/>
-    </designables>
     <resources>
         <image name="basket.fill" catalog="system" width="128" height="108"/>
         <image name="fork.knife.circle.fill" catalog="system" width="128" height="123"/>
