@@ -14,4 +14,7 @@ class BasketCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
+    @IBOutlet weak var itemName: UILabel!
+    
+    @IBOutlet weak var itemPrice: UILabel!
 }

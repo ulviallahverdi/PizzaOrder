@@ -30,18 +30,52 @@ struct drinkBasket: Codable {
     var drinkList: [Drink]
 }
 
-class BasketController: UIViewController {
+class BasketController: UIViewController, UICollectionViewDataSource {
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidLoad()
+        readSousFromBasket()
+        readPizzaBasketFromJson()
+        readDrinkFromBasket()
+        collectionView.register(UINib(nibName: "BasketCollectionViewCell", bundle: Bundle(identifier: "BasketCollectionViewCell")), forCellWithReuseIdentifier: "BasketCollectionViewCell")
+        collectionView.reloadData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         readSousFromBasket()
         readPizzaBasketFromJson()
-        print(basket)
-        print("sous",sousBasket)
         readDrinkFromBasket()
-        print(drinkList)
+        collectionView.register(UINib(nibName: "BasketCollectionViewCell", bundle: Bundle(identifier: "BasketCollectionViewCell")), forCellWithReuseIdentifier: "BasketCollectionViewCell")
         // Do any additional setup after loading the view.
     }
+    
+    
+    // UIVIEW Collection START
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        basket.count
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BasketCollectionViewCell", for: indexPath) as! BasketCollectionViewCell
+        cell.itemName.text = basket[indexPath.item].pizzaList[0].name
+        cell.itemPrice.text = "\(basket[indexPath.item].pizzaList[0].price ?? 0)"
+        return cell
+    }
+    
+    
+    
+    
+    // UIVIEW Collection END
+    
+    
+    
+    
     
 //    var pizzaListIncrease = [PizzaBasket]()
     var basket = [PizzaBasket]()
@@ -103,6 +137,12 @@ class BasketController: UIViewController {
             print(error.localizedDescription)
         }
     }
+    
+    
+    
+    // Ful summary ofthe items result for section for basket
+    
+    // PLAN 1 - To make UI Collection
     
     
     
